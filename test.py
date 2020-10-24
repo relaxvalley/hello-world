@@ -12,7 +12,7 @@ db.init_app(app)
 @app.route('/')
 def hello_world():
   sql_cmd="""select * from users""" 
-  query_data=db.engine.execute(sql_cmd) 
+  query_data=db.engine.execute(sql_cmd).fetchall()
   print(query_data) 
   return 'Hello World' 
 
